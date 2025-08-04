@@ -1,0 +1,122 @@
+* {
+  font-family: "Onest", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f0f0;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  gap: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+}
+
+span {
+  font-size: 24px;
+  font-weight: bold;
+  width: 50px;
+  text-align: center;
+}
+
+.settings-dialog {
+  inset: 0;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: all 0.3s ease allow-discrete;
+  opacity: 0;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &[open] {
+    opacity: 1;
+
+    &::backdrop {
+      opacity: 1;
+    }
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+}
+
+.settings-dialog input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline-color: #007bff;
+    transform: scale(1.02);
+  }
+}
+
+#settings-dialog button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.settings-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.settings-dialog[open]::backdrop {
+  opacity: 1;
+}
