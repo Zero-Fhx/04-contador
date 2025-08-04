@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador</title>
+    <meta name="description" content="Contador simple con JavaScript" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Contador</h1>
+      <div class="counter">
+        <button id="decrease">-</button>
+        <span id="counter">0</span>
+        <button id="increase">+</button>
+      </div>
+      <div class="controls">
+        <button id="reset">Reiniciar</button>
+      </div>
+      <div class="settings">
+        <button id="settings-button">Configuración</button>
+      </div>
+      <dialog id="settings-dialog" class="settings-dialog">
+        <div>
+          <label for="step">Paso:</label>
+          <input type="number" id="step" value="1" min="1" />
+        </div>
+        <div>
+          <label for="min">Mínimo:</label>
+          <input type="number" id="min" value="0" />
+        </div>
+        <div>
+          <label for="max">Máximo:</label>
+          <input type="number" id="max" value="100" />
+        </div>
+        <form method="dialog">
+          <button id="save-settings">Guardar</button>
+          <button id="reset-settings">Restablecer</button>
+          <button id="close-settings">Cerrar</button>
+        </form>
+      </dialog>
+    </main>
+  </body>
+</html>
