@@ -139,33 +139,33 @@ let data = {
   settings: {
     step: 1,
     min: 0,
-    max: 100,
-  },
-};
+    max: 100
+  }
+}
 
-function syncStateToStorage() {
-  data.count = count;
-  data.settings.step = step;
-  data.settings.min = min;
-  data.settings.max = max;
-  localStorage.setItem("counterData", JSON.stringify(data));
+function syncStateToStorage () {
+  data.count = count
+  data.settings.step = step
+  data.settings.min = min
+  data.settings.max = max
+  localStorage.setItem('counterData', JSON.stringify(data))
 }
 ```
 
 ### Límites Inteligentes
 
 ```javascript
-decreaseButton.addEventListener("click", () => {
-  count = Math.max(min, count - step);
-  updateDisplay();
-  syncStateToStorage();
-});
+decreaseButton.addEventListener('click', () => {
+  count = Math.max(min, count - step)
+  updateDisplay()
+  syncStateToStorage()
+})
 
-increaseButton.addEventListener("click", () => {
-  count = Math.min(max, count + step);
-  updateDisplay();
-  syncStateToStorage();
-});
+increaseButton.addEventListener('click', () => {
+  count = Math.min(max, count + step)
+  updateDisplay()
+  syncStateToStorage()
+})
 ```
 
 ### Validación de Configuración
@@ -178,8 +178,8 @@ if (
   newStep <= 0 ||
   newMin >= newMax
 ) {
-  alert("Por favor, ingresa valores válidos.");
-  return;
+  alert('Por favor, ingresa valores válidos.')
+  return
 }
 ```
 
